@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rankings - CcTiers</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Falling Snow Particles -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <img src="assets/cctiers-logo.png" alt="CcTiers Logo" class="logo-image">
+                <h1>CcTiers</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="players.html" class="nav-link active">Rankings</a></li>
+                <li><a href="https://discord.gg/aPFmueH5Yg" class="nav-link" target="_blank">
+                    <span class="discord-icon">💬</span>
+                    Discords
+                </a></li>
+                <li class="nav-link-coming-soon">
+                    <span class="server-icon">🖥️</span>
+                    Server IP
+                    <span class="coming-soon">Coming Soon</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Rankings Section -->
+    <section class="rankings">
+        <div class="rankings-header">
+            <h1>PvP Rankings</h1>
+            <p>Top Minecraft PvP Players by Tier</p>
+        </div>
+
+        <!-- Gamemode Filter Bar -->
+        <div class="gamemodes-container">
+            <div class="gamemodes-scroll" id="gamemodesScroll">
+                <button class="gamemode-btn active" data-gamemode="overall">
+                    <span class="gamemode-icon">🏆</span>
+                    <span>Overall</span>
+                </button>
+                <button class="gamemode-btn" data-gamemode="vanilla">
+                    <img src="assets/vanilla.png" alt="Vanilla" class="gamemode-icon-img">
+                    <span>Vanilla</span>
+                </button>
+                <button class="gamemode-btn" data-gamemode="uhc">
+                    <img src="assets/uhc.png" alt="UHC" class="gamemode-icon-img">
+                    <span>UHC</span>
+                </button>
+                <button class="gamemode-btn" data-gamemode="sword">
+                    <img src="assets/sword.png" alt="Sword" class="gamemode-icon-img">
+                    <span>Sword</span>
+                </button>
+                <button class="gamemode-btn" data-gamemode="axe">
+                    <img src="assets/axe.png" alt="Axe" class="gamemode-icon-img">
+                    <span>Axe</span>
+                </button>
+                <button class="gamemode-btn" data-gamemode="mace">
+                    <img src="assets/mace.png" alt="Mace" class="gamemode-icon-img">
+                    <span>Mace</span>
+                </button>
+                <button class="gamemode-btn" data-gamemode="smp">
+                    <img src="assets/smp.png" alt="SMP" class="gamemode-icon-img">
+                    <span>SMP</span>
+                </button>
+                <button class="gamemode-btn" data-gamemode="nethpot">
+                    <img src="assets/netheritepot.png" alt="NethPot" class="gamemode-icon-img">
+                    <span>NethPot</span>
+                </button>
+                <button class="gamemode-btn" data-gamemode="pot">
+                    <img src="assets/pot.png" alt="Pot" class="gamemode-icon-img">
+                    <span>Pot</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Players Leaderboard -->
+        <div class="leaderboard">
+            <div class="leaderboard-header">
+                <div class="col-rank">Rank</div>
+                <div class="col-player">Player</div>
+                <div class="col-region">Region</div>
+                <div class="col-points">Avg Tier</div>
+                <div class="col-tiers">Tier History</div>
+            </div>
+
+            <div class="players-list" id="playersList">
+                <!-- Players will be rendered here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Player Profile Modal -->
+    <div class="player-modal" id="playerModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-card">
+            <button class="modal-close" id="modalClose">&times;</button>
+            
+            <div class="modal-top">
+                <img class="player-head" id="modalPlayerHead" src="" alt="Player Head">
+                <div class="modal-player-info">
+                    <h2 id="modalPlayerName">Player Name</h2>
+                    <div class="player-badge" id="modalPlayerBadge">Veteran</div>
+                    <div class="player-region" id="modalPlayerRegion">Region: NA</div>
+                </div>
+                <a href="#" class="namemc-btn" id="namemcBtn" target="_blank">
+                    View NameMC Profile
+                </a>
+            </div>
+
+            <div class="modal-middle">
+                <div class="rank-display">
+                    <div class="overall-rank" id="modalOverallRank">#1 OVERALL</div>
+                    <div class="total-points" id="modalTotalPoints">500 Points</div>
+                </div>
+            </div>
+
+            <div class="modal-bottom">
+                <h3>Tiers by Gamemode</h3>
+                <div class="gamemodes-grid" id="gamemodesGrid">
+                    <!-- Gamemode tiers will be rendered here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/players-data.js"></script>
+    <script src="js/players.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
